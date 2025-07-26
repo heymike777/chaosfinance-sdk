@@ -1,17 +1,35 @@
 {
-  "name": "@chaosfinance/sonic-lsd",
+  "name": "@heymike/chaosfinance",
   "version": "1.0.34",
+  "description": "TypeScript SDK for Sonic LSD (Liquid Staking Derivatives) protocol on Solana with support for multiple keypairs",
   "license": "GPL-3.0-only",
   "author": "jeff2857",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chaosfinance/sonic-lsd-app"
+    "url": "https://github.com/heymike777/chaosfinance-sdk"
   },
+  "keywords": [
+    "solana",
+    "staking",
+    "liquid-staking",
+    "defi",
+    "blockchain",
+    "typescript",
+    "sdk"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "yarn tsc",
-    "pub": "npm publish"
+    "pub": "npm publish",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@coral-xyz/anchor": "0.29.0",

@@ -1,3 +1,8 @@
+// New class-based API for Node.js with multiple keypairs
+export { SonicLSD } from "./SonicLSD";
+export type { SonicLSDConfig } from "./SonicLSD";
+
+// Legacy static API (for backward compatibility)
 export {
   type SolanaProvider,
   type ProgramIds,
