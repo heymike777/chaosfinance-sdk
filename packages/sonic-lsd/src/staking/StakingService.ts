@@ -69,11 +69,12 @@ export class StakingService {
       if (!provider || !connection || !this.client.getAnchorProgram()) return;
       const userAddress = provider.publicKey.toString();
 
-      const { sonicTokenMintAddress } = getLsdTokenAddress();
+      const programIds = this.client.getProgramIds();
+
+      const { sonicTokenMintAddress } = programIds;
       const tokenProgramId = await this.client.getTokenProgramId(sonicTokenMintAddress);
       if (!tokenProgramId) return;
 
-      const programIds = this.client.getProgramIds();
       const lsdProgramPubkey = new PublicKey(programIds.lsdProgramId);
       const stakeManagerPubkey = new PublicKey(programIds.stakeManagerAddress);
       const lsdTokenMintPubkey = new PublicKey(programIds.lsdTokenMintAddress);
@@ -95,12 +96,14 @@ export class StakingService {
         true,
         tokenProgramPubkey
       );
+
       const userSonicTokenAddress = await getAssociatedTokenAddress(
         sonicTokenMintPubkey,
         provider.publicKey,
         true,
         tokenProgramPubkey
       );
+
       const poolSonicTokenAddress = await getAssociatedTokenAddress(
         sonicTokenMintPubkey,
         stakePoolPubkey,
