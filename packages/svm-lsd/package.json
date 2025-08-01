@@ -1,17 +1,20 @@
 {
-	"name": "@chaosfinance/svm-vault",
+	"name": "@heymike/chaosfinance-svm",
 	"version": "0.0.3",
 	"license": "GPL-3.0-only",
 	"author": "jeff2857",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/chaosfinance/lsd-package"
+		"url": "https://github.com/heymike777/chaosfinance-sdk"
 	},
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "yarn tsc",
 		"pub": "npm publish"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"dependencies": {
 		"@coral-xyz/anchor": "0.29.0",

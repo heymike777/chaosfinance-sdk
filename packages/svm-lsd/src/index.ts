@@ -28,3 +28,5 @@ export {
   getUserWithdrawInfo,
   type WithdrawInfo,
 } from "./staking";
+
+export { LsdClient } from "./client";

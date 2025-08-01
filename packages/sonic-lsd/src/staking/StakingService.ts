@@ -56,6 +56,7 @@ export class StakingService {
    * @returns transaction hash
    */
   public async stakeSonic(amount: string | number): Promise<string | undefined> {
+    console.log('CHAOS', 'stakeSonic', 'amount:', amount);
     if (!isValidNum(amount)) {
       throw new Error(ERR_NOT_A_VALID_NUMBER);
     }
@@ -70,6 +71,7 @@ export class StakingService {
       const userAddress = provider.publicKey.toString();
 
       const programIds = this.client.getProgramIds();
+      console.log('CHAOS', 'programIds', programIds);
 
       const { sonicTokenMintAddress } = programIds;
       const tokenProgramId = await this.client.getTokenProgramId(sonicTokenMintAddress);
